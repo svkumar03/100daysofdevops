@@ -24,23 +24,7 @@ pipeline {
             }
         }
 
-        stage('TerraformFormat'){
-            steps {
-                dir('ec2_pipeline/'){
-                    sh "terraform fmt -list=true -write=false -diff=true -check=true"
-                }
-            }
-        }
-
-        stage('TerraformValidate'){
-            steps {
-                dir('ec2_pipeline/'){
-                    sh "terraform validate"
-                }
-            }
-        }
-
-        stage('TerraformPlan'){
+          stage('TerraformPlan'){
             steps {
                 dir('ec2_pipeline/'){
                     script {
