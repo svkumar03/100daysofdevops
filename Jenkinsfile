@@ -16,11 +16,11 @@ pipeline {
     stages {
             stage('TerraformInit'){
             steps {
-                dir('ec2_pipeline/'){
+                //dir('ec2_pipeline/'){
                     sh "terraform init -input=false"
                     sh "echo \$PWD"
                     sh "whoami"
-                }
+                //}
             }
         }
 
